@@ -5,7 +5,7 @@
 
 ### Why do we need 1x1 convolution
 
-* It acts as a feature mapper or merger rather than a conventional feature extractor. It maps the values across different input channels to different set of output channels while keeping the spatial dimensions such as width and height of the data untouched during convolution process. For example, consider an input tensor of size 10x10x32 and apply convolution using 16 kernels of size 1x1. It introduces 16x(10x10x32) parameters in the layer. Aggregating the results across input channels produces an output tensor of size 10x10x16.
+* It acts as a feature mapper or merger rather than a conventional feature extractor. It maps the values across different input channels to different set of output channels while keeping the spatial dimensions such as width and height of the data untouched during convolution process. For example, consider an input tensor of size 10x10x32 and apply convolution using 16 kernels of size 1x1. It introduces 16x1x1x32 parameters in the layer. Aggregating the results across input channels produces an output tensor of size 10x10x16.
 
 * The most significant advantage of 1x1 convolution is the reduction of the dimension of input channel. Otherwise, it could also mean reducing correlation across channels in the input. For example: An input of size WxHxC convolved with N kernels of size 1x1xC would result to WxHxN where N < C.
 
